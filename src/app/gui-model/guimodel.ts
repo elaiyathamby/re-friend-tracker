@@ -6,8 +6,34 @@ export class GuiModel {
 
     private _guiModel = {
         "application": {
-            "title": "Requirements Engineering Friend Tracker",
+            "title": "elaiysub Friend Tracker",
             "formList": [
+			{
+				 "id": "GroupForm",
+				 "title": "Group",
+				 "url": "/group",
+				 "formFieldList": [
+				 {
+				 "id": "name",
+				 "type": "text",
+				 "name": "GroupName",
+				 "width": 2,
+				 "required": true
+				 },
+				 {
+				 "type": "deleteButton",
+				 "name": "Delete"
+				 },
+				 {
+				 "type": "cancelButton",
+				 "name": "Cancel"
+				 },
+				 {
+				 "type": "okButton",
+				 "name": "Ok"
+				 }
+				 ]
+				},
                 {
                     "id": "FriendForm",
                     "title": "Friend",
@@ -27,6 +53,13 @@ export class GuiModel {
                             "width": 1,
                             "required": true
                         },
+						{
+							 "id": "nickname",
+							 "type": "text",
+							 "name": "Nickname",
+							 "width": 2,
+							 "required": true
+						},
                         {
                             "id":   "location",
                             "type": "autocomplete",
@@ -138,6 +171,13 @@ export class GuiModel {
                             "color": "yellow",
                             "page": "locationspage",
                         },
+						{
+							 "type": "button",
+							 "name": "Groups",
+							 "icon": "fa-weixin",
+							 "color": "wisteria",
+							 "page": "groupspage",
+						},
                     ]
                 },
                 {
@@ -195,6 +235,23 @@ export class GuiModel {
                         },
                     ]
                 },
+				{
+					 "id": "groupspage",
+					 "elementList": [
+					 {
+						"type": "backbutton",
+					 },
+					 {
+						 "type": "newButton",
+						 "name": "NewGroup",
+						 "icon": "fa-weixin",
+						 "color": "green",
+						 "form": {
+							"form": "GroupForm"
+						 }
+					 }
+					 ]
+				},
             ]
         }
     };
